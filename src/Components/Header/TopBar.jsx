@@ -45,7 +45,7 @@ function TopBar() {
 
   return (
     <div className='bg-gray-900 text-white'>
-        <div className='flex justify-between py-2 px-4 items-center container' >
+        <div className='flex justify-between py-2 px-4 items-center md:container' >
 
             {/* fast info */}
             <div className='text-sm' ref={eleMSG_Ref}>

@@ -1,8 +1,16 @@
 import React from 'react'
 
+// components
+import Background from './Background'
+
 function Home() {
   return (
-    <div>Home</div>
+    <>  
+        <Background/>
+    
+    
+    
+    </>
   )
 }
 

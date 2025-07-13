@@ -31,18 +31,14 @@ function Navbar() {
         if(link.isIcon){
             return (
               <li key={index}><NavLink to={link.path}
-                  className={({isActive}) => 
-                  isActive? 'text-indigo-600' : ''}
-              >   {link.content}</NavLink></li>
+                  className={({isActive}) => isActive? 'text-indigo-600' : ''}>   {link.content}</NavLink></li>
             )
 
         }else{
             return (
               <li key={index} >
-                <NavLink to={link.path}   className={({isActive }) =>
-                    isActive ? "text-indigo-600 border-b-2 border-indigo-600" : "hover:text-indigo-600 border-b-2 border-transparent" }>
-                  {link.content} </NavLink>
-
+                <NavLink to={link.path}   className={({isActive }) => isActive ? "text-indigo-600 border-b-2 border-indigo-600" : 
+                "hover:text-indigo-600 border-b-2 border-transparent" }> {link.content} </NavLink>
               </li>
             )
         }
@@ -78,7 +74,7 @@ function Navbar() {
               {/* links */}
               <ul className='hidden lg:flex items-center gap-6 font-semibold text-stone-800'>{links}</ul>
 
-              <HiMiniBars3BottomRight fontSize='25px' className='lg:hidden'/>
+              <HiMiniBars3BottomRight fontSize='25px' className='lg:hidden cursor-pointer'/>
             </nav>
 
         </header>
