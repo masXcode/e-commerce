@@ -1,16 +1,21 @@
-import React from 'react'
+import React, { createContext } from 'react'
 import Navbar from './Header/Navbar'
 import { Outlet } from 'react-router-dom'
 import Footer from './Footer/Footer'
 
-function MainLayout() {
+export const contextAllData = createContext()
+
+function MainLayout(props) {
+  const response = props.response
   return (
     <>
-        <Navbar/>
+      <contextAllData.Provider value={response}>
+          <Navbar/>
 
-        <Outlet/>
+          <Outlet/>
 
-        <Footer/>
+          <Footer/>
+      </contextAllData.Provider>
     </>
 
   )
