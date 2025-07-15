@@ -49,17 +49,17 @@ export default function BackgroundSlider() {
           ))}
         </Slider>
 
-        {/* غطاء لتعتيم الخلفية (شفاف) */}
+        {/* make background dark*/}
         <div className="absolute inset-0 bg-black bg-opacity-40 z-10" />
       </div>
 
-      {/* ✅ المحتوى الثابت */}
+      {/* content */}
       <div className="absolute inset-0 z-20 flex items-center text-white p-3 vsm:p-10 md:p-16 lg:p-24 sm:container">
         <div className="sm:-translate-y-5 w-full ">
-          <h1 className="text-[25px] vsm:text-[30px] sm:text-[40px] md:text-[45px] lg:text-[55px] xl:text-[60px] font-bold">Summer Collection 2025</h1>
-          <p className="vsm:text-lg mb-4">Discover our new arrivals with up to 30% off on selected items</p>
+          <h1 className="TBO_ani text-[25px] vsm:text-[30px] sm:text-[40px] md:text-[45px] lg:text-[55px] xl:text-[60px] font-bold">Summer Collection 2025</h1>
+          <p className="LRO_ani vsm:text-lg mb-4">Discover our new arrivals with up to 30% off on selected items</p>
 
-            <div className='flex flex-col sm:flex-row sm:gap-4'>
+            <div className='O_ani flex flex-col sm:flex-row sm:gap-4'>
                 <Btn text="Shop Now"/>
                 <Btn text="View collection" bg="bg-white"  textColor="text-[#4F46E5]"/>
             </div>

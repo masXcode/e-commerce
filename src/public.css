@@ -7,8 +7,50 @@
 
 
 
-
-
 body{
     height: 200vh;
+}
+
+
+
+
+
+
+
+/********************** animation  */
+.TBO_ani{
+    animation: TBO_ani 1.5s .1s both;
+}
+@keyframes TBO_ani {
+    from{
+        transform: translateY(-50px);
+        opacity: 0;
+    }to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.LRO_ani{
+    animation: LRO_ani 1s .5s both;
+}
+@keyframes LRO_ani {
+    from{
+        transform: translateX(-50px);
+        opacity: 0;
+    }to{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.O_ani{
+    animation: O_ani 1s .7s both;
+}
+@keyframes O_ani {
+    from{
+        opacity: 0;
+    }to{
+        opacity: 1;
+    }
 }

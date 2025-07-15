@@ -31,7 +31,7 @@ function Navbar() {
         if(link.isIcon){
             return (
               <li key={index}><NavLink to={link.path}
-                  className={({isActive}) => isActive? 'text-indigo-600' : ''}>   {link.content}</NavLink></li>
+                  className={({isActive}) => isActive? 'text-indigo-600' : 'hover:text-indigo-600'}>   {link.content}</NavLink></li>
             )
 
         }else{
