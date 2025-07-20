@@ -1,7 +1,7 @@
 import React from 'react';
 
 // components
-import Btn from '../../Components/Btn';
+import Btn from '../../Components/Btns/Btn';
 
 
 //  from react-slick
