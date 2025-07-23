@@ -35,19 +35,19 @@ export default function CategorySlider({ category }) {
     rubberband: true,
     slides: {
       perView: 1.3,
-      spacing: 10,
+      spacing: 2,
     },
 
     // make slider responsive
     breakpoints: {
       "(min-width: 640px)": {
-        slides: { perView: 2.5, spacing: 15 },
+        slides: { perView: 2.5, spacing: 2 },
       },
       "(min-width: 768px)": {
-        slides: { perView: 2.5, spacing: 20 },
+        slides: { perView: 2.5, spacing: 2 },
       },
       "(min-width: 1024px)": {
-        slides: { perView: 3.2, spacing: 10 },
+        slides: { perView: 3.2, spacing: 1},
       },
       "(min-width: 1280px)": {
         slides: { perView: 4.2, spacing: 1 },
@@ -63,16 +63,16 @@ export default function CategorySlider({ category }) {
 
     // get data from session storage
     const vafourites_KEY = "favorites"
-    const getFavorites = () => ( JSON.parse(sessionStorage.getItem(vafourites_KEY)) || [] )
+    const getSessionData = (Session_Key) => ( JSON.parse(sessionStorage.getItem(Session_Key)) || [] )
 
     // send data to session storage
-    const saveFavorites = (newFavourites,vafourites_KEY) => 
-          sessionStorage.setItem(vafourites_KEY, JSON.stringify(newFavourites))
+    const saveSessionData = (newData, Session_Key) => 
+          sessionStorage.setItem(Session_Key, JSON.stringify(newData))
 
 
     // check if the product in favourites or not 
     const isFavorite = (productId) => {
-        const favorites = getFavorites();
+        const favorites = getSessionData(vafourites_KEY);
         return favorites.some((fav) => fav.id === productId);
     };
 
@@ -82,7 +82,7 @@ export default function CategorySlider({ category }) {
 
       // toggle products in favourites 
       const toggleFavorite = (product) =>{
-          const favourites = getFavorites();
+          const favourites = getSessionData(vafourites_KEY);
           let updatedFavorites ;
 
           if(favourites.some(fav => fav.id === product.id)){
@@ -91,7 +91,7 @@ export default function CategorySlider({ category }) {
               updatedFavorites = [...favourites, product]
           }
 
-          saveFavorites(updatedFavorites, vafourites_KEY)
+          saveSessionData(updatedFavorites, vafourites_KEY)
           setRender(prev => !prev)
       }
 
@@ -102,7 +102,21 @@ export default function CategorySlider({ category }) {
       const addToCart = (e , product) =>{
         e.stopPropagation()  // stop dragging
 
-        
+          // get old products in cart
+          const cartProducts = getSessionData(Cart_key)
+          let newData; 
+          
+           const existingProduct = cartProducts.find(p => p.id === product.id);
+
+            if (existingProduct) {
+              existingProduct.productNumber += 1;
+              newData = [...cartProducts];
+            } else {
+              product.productNumber = 1;
+              newData = [...cartProducts, product];
+            }
+
+          saveSessionData(newData, Cart_key)
       }
 
 
@@ -177,9 +191,6 @@ export default function CategorySlider({ category }) {
                         <div className='flex items-center gap-1'><FaTruckFast/> <span>Free Delivary</span></div>
                         <div>tomorrow</div>
                     </div>
-
-
-
 
                 </div>
               </div>

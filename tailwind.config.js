@@ -9,8 +9,9 @@ export default {
 
     // screens
     screens: {
-      vsm: "480px",     // ✅ شاشات من 450px وأكبر
-      sm: "640px",      // الشاشات العادية (الموجودة أصلًا)
+      vsm: "480px",     
+      sm: "640px",      
+      lsm:"680px",
       md: "768px",
       lg: "1024px",
       xl: "1280px",
