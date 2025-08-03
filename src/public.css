@@ -48,3 +48,39 @@
 }
 
 
+.NF_ani{
+    animation: NF_ani .5s both;
+}
+@keyframes NF_ani {
+    from{
+        scale: .5;
+        opacity: .5;
+    }to{
+        scale: 1;
+        opacity: 1;
+    }
+}
+
+.LTTL_ani{
+    animation: LTTL_ani .5s .4s both;
+}
+@keyframes LTTL_ani {
+    0%{
+        transform: rotate(0);
+    }
+    25%{
+        transform: rotate(10deg);
+    }
+    50%{
+        transform: rotate(-10deg);
+    }
+    70%{
+        transform: rotate(10deg);
+    }
+    85%{
+        transform: rotate(-10deg);
+    }
+    100%{
+        transform: rotate(0);
+    }
+}

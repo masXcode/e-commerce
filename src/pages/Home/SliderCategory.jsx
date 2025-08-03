@@ -124,7 +124,7 @@ export default function CategorySlider({ category }) {
     <div className='mt-8 text-stone-800'>
 
       {/* title of category */}
-      <h2 className="text-xl font-semibold mb-4 ml-4">{name}</h2>
+      <h2 className="text-xl sm:text-2xl font-semibold mb-4 ml-4">{name}</h2>
 
       {/* Slider */}
       <div ref={sliderRef} className="keen-slider">

@@ -39,7 +39,7 @@ function useMainData() {
                     
                     categoriesData.map(async (category) =>{
                         const response = await axios.get(category.url)
-                         return {slug:category.slug, name:category.name, products: response.data.products}
+                        return {slug:category.slug, name:category.name, products: response.data.products}
                     })
                 )
                 setData(result)
