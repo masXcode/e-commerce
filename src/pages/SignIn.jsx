@@ -26,7 +26,11 @@ function LogIn() {
     //
       const submition = (e) =>{
           e.preventDefault()
-          const logInData = {email,password}
+
+          const rememberME = checkRef.current.checked
+
+
+          const logInData = {email,password,rememberME}
           console.log(logInData)
 
           // clear inputs
