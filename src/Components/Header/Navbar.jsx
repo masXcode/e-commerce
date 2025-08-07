@@ -21,7 +21,7 @@ function Navbar() {
             {content:'Shop', path:"shop" ,isIcon:false},
             {content:'Categories', path:"categories" ,isIcon:false},
             {content:'About', path:"about" ,isIcon:false},
-            {content:<FaUser className='text-xl'/>, path:"/login" ,isIcon:true},
+            {content:<FaUser className='text-xl'/>, path:"/signin" ,isIcon:true},
             {content:<FaHeart className='text-xl'/>, path:"wishlist" ,isIcon:true},
             {content:<FaShoppingCart className='text-xl'/>, path:"cart" ,isIcon:true},
     ]

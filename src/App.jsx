@@ -6,6 +6,8 @@ import Home from './pages/Home/Home.jsx'
 import Product from "./pages/Product.jsx"
 import Cart from "./pages/Cart.jsx"
 import NotFound from "./Components/NotFound.jsx"
+import SignIn from "./pages/SignIn.jsx"
+import Register from "./pages/Register.jsx"
 
 
 // hooks
@@ -39,6 +41,9 @@ function App() {
                     <Route path="*" element={<NotFound/>}/> 
 
                 </Route>
+
+                <Route path="/signin" element={<SignIn/>}/>  {/* Sign In */}
+                <Route path="register" element={<Register/>}/>  {/* register */}
 
             </Routes>
         </BrowserRouter>
